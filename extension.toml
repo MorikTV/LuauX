@@ -1,0 +1,12 @@
+id = "luaux"
+name = "LuauX"
+version = "0.1.0"
+schema_version = 1
+authors = ["morikyt"]
+description = "LuauX — Roblox Luau snippets for Zed. game, workspace, Instance, services, RemoteEvents, TweenService, DataStore and more."
+repository = "https://github.com/MorikTV/LuauX"
+license = "MIT"
+
+[grammars.lua]
+repository = "https://github.com/MunifTanjim/tree-sitter-lua"
+commit = "33aba629fa02a1a6b08c6e8a56e5004fe6cfab4b"

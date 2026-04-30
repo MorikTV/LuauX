@@ -1,0 +1,645 @@
+{
+  "-- if statement": {
+    "prefix": "if",
+    "body": "if ${1:condition} then\n\t${0}\nend",
+    "description": "If statement"
+  },
+  "-- if-else statement": {
+    "prefix": "ife",
+    "body": "if ${1:condition} then\n\t${2}\nelse\n\t${0}\nend",
+    "description": "If-else statement"
+  },
+  "-- elseif": {
+    "prefix": "elseif",
+    "body": "elseif ${1:condition} then\n\t${0}",
+    "description": "Elseif branch"
+  },
+  "-- while loop": {
+    "prefix": "while",
+    "body": "while ${1:condition} do\n\t${0}\nend",
+    "description": "While loop"
+  },
+  "-- repeat loop": {
+    "prefix": "repeat",
+    "body": "repeat\n\t${0}\nuntil ${1:condition}",
+    "description": "Repeat-until loop"
+  },
+  "-- for numeric loop": {
+    "prefix": "for",
+    "body": "for ${1:i} = ${2:1}, ${3:10} do\n\t${0}\nend",
+    "description": "Numerical for loop"
+  },
+  "-- for in pairs": {
+    "prefix": "forp",
+    "body": "for ${1:k}, ${2:v} in pairs(${3:t}) do\n\t${0}\nend",
+    "description": "For-in pairs loop"
+  },
+  "-- for in ipairs": {
+    "prefix": "fori",
+    "body": "for ${1:i}, ${2:v} in ipairs(${3:t}) do\n\t${0}\nend",
+    "description": "For-in ipairs loop"
+  },
+  "-- do block": {
+    "prefix": "do",
+    "body": "do\n\t${0}\nend",
+    "description": "Do block"
+  },
+  "-- function": {
+    "prefix": "fn",
+    "body": "function ${1:name}(${2})\n\t${0}\nend",
+    "description": "Function definition"
+  },
+  "-- local function": {
+    "prefix": "lfn",
+    "body": "local function ${1:name}(${2})\n\t${0}\nend",
+    "description": "Local function definition"
+  },
+  "-- anonymous function": {
+    "prefix": "afn",
+    "body": "function(${1})\n\t${0}\nend",
+    "description": "Anonymous function"
+  },
+  "-- local variable": {
+    "prefix": "loc",
+    "body": "local ${1:name} = ${0}",
+    "description": "Local variable"
+  },
+
+  "-- pcall": {
+    "prefix": "pcall",
+    "body": "local ${1:ok}, ${2:err} = pcall(function()\n\t${0}\nend)",
+    "description": "Protected call"
+  },
+  "-- xpcall": {
+    "prefix": "xpcall",
+    "body": "local ${1:ok}, ${2:err} = xpcall(function()\n\t${0}\nend, function(err)\n\twarn(err)\nend)",
+    "description": "Extended protected call"
+  },
+
+  "-- game:GetService": {
+    "prefix": "gs",
+    "body": "game:GetService(\"${1:ServiceName}\")",
+    "description": "game:GetService()"
+  },
+  "-- Players service": {
+    "prefix": "Players",
+    "body": "local Players = game:GetService(\"Players\")",
+    "description": "Get Players service"
+  },
+  "-- ReplicatedStorage": {
+    "prefix": "RS",
+    "body": "local ReplicatedStorage = game:GetService(\"ReplicatedStorage\")",
+    "description": "Get ReplicatedStorage"
+  },
+  "-- ServerStorage": {
+    "prefix": "SS",
+    "body": "local ServerStorage = game:GetService(\"ServerStorage\")",
+    "description": "Get ServerStorage"
+  },
+  "-- ServerScriptService": {
+    "prefix": "SSS",
+    "body": "local ServerScriptService = game:GetService(\"ServerScriptService\")",
+    "description": "Get ServerScriptService"
+  },
+  "-- TweenService": {
+    "prefix": "TweenService",
+    "body": "local TweenService = game:GetService(\"TweenService\")",
+    "description": "Get TweenService"
+  },
+  "-- RunService": {
+    "prefix": "RunService",
+    "body": "local RunService = game:GetService(\"RunService\")",
+    "description": "Get RunService"
+  },
+  "-- UserInputService": {
+    "prefix": "UIS",
+    "body": "local UserInputService = game:GetService(\"UserInputService\")",
+    "description": "Get UserInputService"
+  },
+  "-- HttpService": {
+    "prefix": "HttpService",
+    "body": "local HttpService = game:GetService(\"HttpService\")",
+    "description": "Get HttpService"
+  },
+  "-- DataStoreService": {
+    "prefix": "DSS",
+    "body": "local DataStoreService = game:GetService(\"DataStoreService\")",
+    "description": "Get DataStoreService"
+  },
+  "-- MarketplaceService": {
+    "prefix": "MPS",
+    "body": "local MarketplaceService = game:GetService(\"MarketplaceService\")",
+    "description": "Get MarketplaceService"
+  },
+  "-- CollectionService": {
+    "prefix": "CS",
+    "body": "local CollectionService = game:GetService(\"CollectionService\")",
+    "description": "Get CollectionService"
+  },
+  "-- PathfindingService": {
+    "prefix": "PFS",
+    "body": "local PathfindingService = game:GetService(\"PathfindingService\")",
+    "description": "Get PathfindingService"
+  },
+  "-- SoundService": {
+    "prefix": "SoundService",
+    "body": "local SoundService = game:GetService(\"SoundService\")",
+    "description": "Get SoundService"
+  },
+  "-- TextService": {
+    "prefix": "TextService",
+    "body": "local TextService = game:GetService(\"TextService\")",
+    "description": "Get TextService"
+  },
+  "-- PhysicsService": {
+    "prefix": "PhysicsService",
+    "body": "local PhysicsService = game:GetService(\"PhysicsService\")",
+    "description": "Get PhysicsService"
+  },
+  "-- ChatService": {
+    "prefix": "ChatService",
+    "body": "local ChatService = game:GetService(\"Chat\")",
+    "description": "Get Chat service"
+  },
+  "-- ContextActionService": {
+    "prefix": "CAS",
+    "body": "local ContextActionService = game:GetService(\"ContextActionService\")",
+    "description": "Get ContextActionService"
+  },
+  "-- GuiService": {
+    "prefix": "GuiService",
+    "body": "local GuiService = game:GetService(\"GuiService\")",
+    "description": "Get GuiService"
+  },
+
+  "-- game.Players.PlayerAdded": {
+    "prefix": "PlayerAdded",
+    "body": "game.Players.PlayerAdded:Connect(function(${1:player})\n\t${0}\nend)",
+    "description": "PlayerAdded event"
+  },
+  "-- game.Players.PlayerRemoving": {
+    "prefix": "PlayerRemoving",
+    "body": "game.Players.PlayerRemoving:Connect(function(${1:player})\n\t${0}\nend)",
+    "description": "PlayerRemoving event"
+  },
+  "-- player.CharacterAdded": {
+    "prefix": "CharacterAdded",
+    "body": "${1:player}.CharacterAdded:Connect(function(${2:character})\n\t${0}\nend)",
+    "description": "CharacterAdded event"
+  },
+  "-- WaitForChild": {
+    "prefix": "wfc",
+    "body": "${1:parent}:WaitForChild(\"${2:childName}\")",
+    "description": "WaitForChild()"
+  },
+  "-- FindFirstChild": {
+    "prefix": "ffc",
+    "body": "${1:parent}:FindFirstChild(\"${2:childName}\")",
+    "description": "FindFirstChild()"
+  },
+  "-- FindFirstChildOfClass": {
+    "prefix": "ffcoc",
+    "body": "${1:parent}:FindFirstChildOfClass(\"${2:className}\")",
+    "description": "FindFirstChildOfClass()"
+  },
+  "-- FindFirstChildWhichIsA": {
+    "prefix": "ffcwia",
+    "body": "${1:parent}:FindFirstChildWhichIsA(\"${2:className}\")",
+    "description": "FindFirstChildWhichIsA()"
+  },
+  "-- FindFirstAncestorOfClass": {
+    "prefix": "ffaoc",
+    "body": "${1:instance}:FindFirstAncestorOfClass(\"${2:className}\")",
+    "description": "FindFirstAncestorOfClass()"
+  },
+  "-- GetChildren": {
+    "prefix": "gc",
+    "body": "${1:parent}:GetChildren()",
+    "description": "GetChildren()"
+  },
+  "-- GetDescendants": {
+    "prefix": "gd",
+    "body": "${1:parent}:GetDescendants()",
+    "description": "GetDescendants()"
+  },
+  "-- Instance.new": {
+    "prefix": "new",
+    "body": "local ${1:instance} = Instance.new(\"${2:ClassName}\")\n${1}.Parent = ${3:parent}\n${0}",
+    "description": "Instance.new()"
+  },
+  "-- Instance.new Part": {
+    "prefix": "newpart",
+    "body": "local ${1:part} = Instance.new(\"Part\")\n${1}.Name = \"${2:Part}\"\n${1}.Size = Vector3.new(${3:4}, ${4:1}, ${5:4})\n${1}.Position = Vector3.new(${6:0}, ${7:0}, ${8:0})\n${1}.Anchored = ${9:true}\n${1}.Parent = workspace\n${0}",
+    "description": "Create a new Part"
+  },
+  "-- Clone": {
+    "prefix": "clone",
+    "body": "local ${1:copy} = ${2:instance}:Clone()\n${1}.Parent = ${3:parent}",
+    "description": "Clone an instance"
+  },
+  "-- Destroy": {
+    "prefix": "dest",
+    "body": "${1:instance}:Destroy()",
+    "description": "Destroy()"
+  },
+  "-- GetAttribute": {
+    "prefix": "gattr",
+    "body": "${1:instance}:GetAttribute(\"${2:attribute}\")",
+    "description": "GetAttribute()"
+  },
+  "-- SetAttribute": {
+    "prefix": "sattr",
+    "body": "${1:instance}:SetAttribute(\"${2:attribute}\", ${3:value})",
+    "description": "SetAttribute()"
+  },
+  "-- GetPropertyChangedSignal": {
+    "prefix": "gpcs",
+    "body": "${1:instance}:GetPropertyChangedSignal(\"${2:Property}\"):Connect(function()\n\t${0}\nend)",
+    "description": "GetPropertyChangedSignal():Connect()"
+  },
+  "-- IsA": {
+    "prefix": "isa",
+    "body": "${1:instance}:IsA(\"${2:ClassName}\")",
+    "description": "IsA()"
+  },
+
+  "-- Connect event": {
+    "prefix": "conn",
+    "body": "${1:event}:Connect(function(${2})\n\t${0}\nend)",
+    "description": "Event:Connect()"
+  },
+  "-- Disconnect": {
+    "prefix": "disconn",
+    "body": "local ${1:connection}\n${1} = ${2:event}:Connect(function(${3})\n\t${0}\n\t${1}:Disconnect()\nend)",
+    "description": "Connect and auto-disconnect"
+  },
+  "-- Once": {
+    "prefix": "once",
+    "body": "${1:event}:Once(function(${2})\n\t${0}\nend)",
+    "description": "Event:Once()"
+  },
+
+  "-- task.spawn": {
+    "prefix": "tspawn",
+    "body": "task.spawn(function()\n\t${0}\nend)",
+    "description": "task.spawn()"
+  },
+  "-- task.defer": {
+    "prefix": "tdefer",
+    "body": "task.defer(function()\n\t${0}\nend)",
+    "description": "task.defer()"
+  },
+  "-- task.delay": {
+    "prefix": "tdelay",
+    "body": "task.delay(${1:seconds}, function()\n\t${0}\nend)",
+    "description": "task.delay()"
+  },
+  "-- task.wait": {
+    "prefix": "twait",
+    "body": "task.wait(${1:seconds})",
+    "description": "task.wait()"
+  },
+
+  "-- RemoteEvent": {
+    "prefix": "re",
+    "body": "local ${1:RemoteEvent} = ReplicatedStorage:WaitForChild(\"${2:RemoteEvent}\")",
+    "description": "Get RemoteEvent"
+  },
+  "-- RemoteFunction": {
+    "prefix": "rf",
+    "body": "local ${1:RemoteFunction} = ReplicatedStorage:WaitForChild(\"${2:RemoteFunction}\")",
+    "description": "Get RemoteFunction"
+  },
+  "-- FireServer": {
+    "prefix": "fs",
+    "body": "${1:RemoteEvent}:FireServer(${2})",
+    "description": "RemoteEvent:FireServer()"
+  },
+  "-- FireClient": {
+    "prefix": "fc",
+    "body": "${1:RemoteEvent}:FireClient(${2:player}, ${3})",
+    "description": "RemoteEvent:FireClient()"
+  },
+  "-- FireAllClients": {
+    "prefix": "fac",
+    "body": "${1:RemoteEvent}:FireAllClients(${2})",
+    "description": "RemoteEvent:FireAllClients()"
+  },
+  "-- OnServerEvent": {
+    "prefix": "ose",
+    "body": "${1:RemoteEvent}.OnServerEvent:Connect(function(${2:player}, ${3})\n\t${0}\nend)",
+    "description": "OnServerEvent:Connect()"
+  },
+  "-- OnClientEvent": {
+    "prefix": "oce",
+    "body": "${1:RemoteEvent}.OnClientEvent:Connect(function(${2})\n\t${0}\nend)",
+    "description": "OnClientEvent:Connect()"
+  },
+  "-- InvokeServer": {
+    "prefix": "is",
+    "body": "${1:RemoteFunction}:InvokeServer(${2})",
+    "description": "RemoteFunction:InvokeServer()"
+  },
+  "-- OnServerInvoke": {
+    "prefix": "osi",
+    "body": "${1:RemoteFunction}.OnServerInvoke = function(${2:player}, ${3})\n\t${0}\nend",
+    "description": "OnServerInvoke"
+  },
+
+  "-- TweenService:Create": {
+    "prefix": "tween",
+    "body": "local ${1:tween} = TweenService:Create(\n\t${2:instance},\n\tTweenInfo.new(${3:1}, Enum.EasingStyle.${4:Quad}, Enum.EasingDirection.${5:Out}),\n\t{ ${6:Property} = ${7:value} }\n)\n${1}:Play()",
+    "description": "TweenService:Create() and play"
+  },
+  "-- TweenInfo.new": {
+    "prefix": "tweeninfo",
+    "body": "TweenInfo.new(${1:1}, Enum.EasingStyle.${2:Quad}, Enum.EasingDirection.${3:Out}, ${4:0}, ${5:false}, ${6:0})",
+    "description": "TweenInfo.new()"
+  },
+
+  "-- DataStore get": {
+    "prefix": "dsget",
+    "body": "local ${1:DataStore} = DataStoreService:GetDataStore(\"${2:StoreName}\")\nlocal ${3:data}\nlocal ${4:ok}, ${5:err} = pcall(function()\n\t${3} = ${1}:GetAsync(${6:key})\nend)\nif not ${4} then\n\twarn(${5})\nend",
+    "description": "DataStore GetAsync with pcall"
+  },
+  "-- DataStore set": {
+    "prefix": "dsset",
+    "body": "local ${1:ok}, ${2:err} = pcall(function()\n\t${3:DataStore}:SetAsync(${4:key}, ${5:value})\nend)\nif not ${1} then\n\twarn(${2})\nend",
+    "description": "DataStore SetAsync with pcall"
+  },
+
+  "-- Vector3.new": {
+    "prefix": "v3",
+    "body": "Vector3.new(${1:0}, ${2:0}, ${3:0})",
+    "description": "Vector3.new()"
+  },
+  "-- Vector2.new": {
+    "prefix": "v2",
+    "body": "Vector2.new(${1:0}, ${2:0})",
+    "description": "Vector2.new()"
+  },
+  "-- CFrame.new": {
+    "prefix": "cf",
+    "body": "CFrame.new(${1:0}, ${2:0}, ${3:0})",
+    "description": "CFrame.new()"
+  },
+  "-- CFrame.lookAt": {
+    "prefix": "cfla",
+    "body": "CFrame.lookAt(${1:from}, ${2:to})",
+    "description": "CFrame.lookAt()"
+  },
+  "-- UDim2.new": {
+    "prefix": "udim2",
+    "body": "UDim2.new(${1:0}, ${2:0}, ${3:0}, ${4:0})",
+    "description": "UDim2.new()"
+  },
+  "-- UDim2.fromScale": {
+    "prefix": "udim2s",
+    "body": "UDim2.fromScale(${1:0.5}, ${2:0.5})",
+    "description": "UDim2.fromScale()"
+  },
+  "-- UDim2.fromOffset": {
+    "prefix": "udim2o",
+    "body": "UDim2.fromOffset(${1:100}, ${2:100})",
+    "description": "UDim2.fromOffset()"
+  },
+  "-- Color3.fromRGB": {
+    "prefix": "rgb",
+    "body": "Color3.fromRGB(${1:255}, ${2:255}, ${3:255})",
+    "description": "Color3.fromRGB()"
+  },
+  "-- Color3.fromHSV": {
+    "prefix": "hsv",
+    "body": "Color3.fromHSV(${1:0}, ${2:1}, ${3:1})",
+    "description": "Color3.fromHSV()"
+  },
+  "-- BrickColor.new": {
+    "prefix": "bc",
+    "body": "BrickColor.new(\"${1:Bright red}\")",
+    "description": "BrickColor.new()"
+  },
+  "-- RaycastParams": {
+    "prefix": "rayparams",
+    "body": "local ${1:params} = RaycastParams.new()\n${1}.FilterDescendantsInstances = { ${2:workspace} }\n${1}.FilterType = Enum.RaycastFilterType.${3:Exclude}",
+    "description": "RaycastParams setup"
+  },
+  "-- workspace:Raycast": {
+    "prefix": "raycast",
+    "body": "local ${1:result} = workspace:Raycast(${2:origin}, ${3:direction}, ${4:params})\nif ${1} then\n\tlocal ${5:hit} = ${1}.Instance\n\t${0}\nend",
+    "description": "workspace:Raycast()"
+  },
+
+  "-- RunService.Heartbeat": {
+    "prefix": "heartbeat",
+    "body": "RunService.Heartbeat:Connect(function(${1:dt})\n\t${0}\nend)",
+    "description": "RunService.Heartbeat"
+  },
+  "-- RunService.RenderStepped": {
+    "prefix": "renderstepped",
+    "body": "RunService.RenderStepped:Connect(function(${1:dt})\n\t${0}\nend)",
+    "description": "RunService.RenderStepped (client only)"
+  },
+  "-- RunService.Stepped": {
+    "prefix": "stepped",
+    "body": "RunService.Stepped:Connect(function(${1:time}, ${2:dt})\n\t${0}\nend)",
+    "description": "RunService.Stepped"
+  },
+  "-- RunService IsServer/IsClient": {
+    "prefix": "isserver",
+    "body": "if RunService:IsServer() then\n\t${0}\nend",
+    "description": "RunService:IsServer() check"
+  },
+
+  "-- print": {
+    "prefix": "print",
+    "body": "print(${1})",
+    "description": "print()"
+  },
+  "-- warn": {
+    "prefix": "warn",
+    "body": "warn(${1})",
+    "description": "warn()"
+  },
+  "-- error": {
+    "prefix": "error",
+    "body": "error(${1:message})",
+    "description": "error()"
+  },
+  "-- assert": {
+    "prefix": "assert",
+    "body": "assert(${1:condition}, \"${2:message}\")",
+    "description": "assert()"
+  },
+  "-- require": {
+    "prefix": "req",
+    "body": "local ${1:Module} = require(${2:path})",
+    "description": "require()"
+  },
+  "-- typeof": {
+    "prefix": "typeof",
+    "body": "typeof(${1:value})",
+    "description": "typeof()"
+  },
+  "-- tostring": {
+    "prefix": "tostr",
+    "body": "tostring(${1:value})",
+    "description": "tostring()"
+  },
+  "-- tonumber": {
+    "prefix": "tonum",
+    "body": "tonumber(${1:value})",
+    "description": "tonumber()"
+  },
+
+  "-- table.insert": {
+    "prefix": "tins",
+    "body": "table.insert(${1:t}, ${2:value})",
+    "description": "table.insert()"
+  },
+  "-- table.remove": {
+    "prefix": "trem",
+    "body": "table.remove(${1:t}, ${2:index})",
+    "description": "table.remove()"
+  },
+  "-- table.find": {
+    "prefix": "tfind",
+    "body": "table.find(${1:t}, ${2:value})",
+    "description": "table.find()"
+  },
+  "-- table.concat": {
+    "prefix": "tconc",
+    "body": "table.concat(${1:t}, \"${2:sep}\")",
+    "description": "table.concat()"
+  },
+  "-- table.sort": {
+    "prefix": "tsort",
+    "body": "table.sort(${1:t}, function(${2:a}, ${3:b})\n\treturn ${2} ${4:<} ${3}\nend)",
+    "description": "table.sort()"
+  },
+  "-- table.move": {
+    "prefix": "tmove",
+    "body": "table.move(${1:a1}, ${2:f}, ${3:e}, ${4:t}, ${5:a2})",
+    "description": "table.move()"
+  },
+
+  "-- string.format": {
+    "prefix": "sfmt",
+    "body": "string.format(\"${1:%s}\", ${2:value})",
+    "description": "string.format()"
+  },
+  "-- string.find": {
+    "prefix": "sfind",
+    "body": "string.find(${1:str}, \"${2:pattern}\")",
+    "description": "string.find()"
+  },
+  "-- string.sub": {
+    "prefix": "ssub",
+    "body": "string.sub(${1:str}, ${2:i}, ${3:j})",
+    "description": "string.sub()"
+  },
+  "-- string.gsub": {
+    "prefix": "sgsub",
+    "body": "string.gsub(${1:str}, \"${2:pattern}\", \"${3:repl}\")",
+    "description": "string.gsub()"
+  },
+  "-- string.split": {
+    "prefix": "ssplit",
+    "body": "string.split(${1:str}, \"${2:sep}\")",
+    "description": "string.split()"
+  },
+  "-- string.upper/lower": {
+    "prefix": "supper",
+    "body": "string.upper(${1:str})",
+    "description": "string.upper()"
+  },
+
+  "-- math.clamp": {
+    "prefix": "mclamp",
+    "body": "math.clamp(${1:value}, ${2:min}, ${3:max})",
+    "description": "math.clamp()"
+  },
+  "-- math.floor": {
+    "prefix": "mfloor",
+    "body": "math.floor(${1:value})",
+    "description": "math.floor()"
+  },
+  "-- math.ceil": {
+    "prefix": "mceil",
+    "body": "math.ceil(${1:value})",
+    "description": "math.ceil()"
+  },
+  "-- math.round": {
+    "prefix": "mround",
+    "body": "math.round(${1:value})",
+    "description": "math.round()"
+  },
+  "-- math.random": {
+    "prefix": "mrand",
+    "body": "math.random(${1:min}, ${2:max})",
+    "description": "math.random()"
+  },
+  "-- math.abs": {
+    "prefix": "mabs",
+    "body": "math.abs(${1:value})",
+    "description": "math.abs()"
+  },
+  "-- math.lerp (manual)": {
+    "prefix": "lerp",
+    "body": "${1:a} + (${2:b} - ${1:a}) * ${3:t}",
+    "description": "Linear interpolation"
+  },
+
+  "-- OOP Class": {
+    "prefix": "class",
+    "body": "local ${1:ClassName} = {}\n${1}.__index = ${1}\n\nfunction ${1}.new(${2})\n\tlocal self = setmetatable({}, ${1})\n\t${0}\n\treturn self\nend\n\nfunction ${1}:${3:Method}(${4})\n\t\nend\n\nreturn ${1}",
+    "description": "OOP class template"
+  },
+
+  "-- Module script template": {
+    "prefix": "module",
+    "body": "local ${1:Module} = {}\n\n${0}\n\nreturn ${1}",
+    "description": "ModuleScript template"
+  },
+  "-- Script header comment": {
+    "prefix": "header",
+    "body": "-- ${1:Script Name}\n-- Author: ${2:Author}\n-- Date: ${3:2026}\n-- Description: ${4}\n\n${0}",
+    "description": "Script header comment"
+  },
+
+  "-- Humanoid from character": {
+    "prefix": "humanoid",
+    "body": "local ${1:humanoid} = ${2:character}:FindFirstChildOfClass(\"Humanoid\")",
+    "description": "Get Humanoid from character"
+  },
+  "-- HumanoidRootPart": {
+    "prefix": "hrp",
+    "body": "local ${1:hrp} = ${2:character}:FindFirstChild(\"HumanoidRootPart\")",
+    "description": "Get HumanoidRootPart"
+  },
+  "-- GetPlayers loop": {
+    "prefix": "forplayers",
+    "body": "for _, ${1:player} in ipairs(game.Players:GetPlayers()) do\n\t${0}\nend",
+    "description": "Loop over all players"
+  },
+  "-- LocalPlayer": {
+    "prefix": "lp",
+    "body": "local LocalPlayer = game.Players.LocalPlayer",
+    "description": "LocalPlayer"
+  },
+  "-- LocalPlayer Character": {
+    "prefix": "lpchar",
+    "body": "local LocalPlayer = game.Players.LocalPlayer\nlocal character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()",
+    "description": "LocalPlayer + Character"
+  },
+
+  "-- BindToClose": {
+    "prefix": "bindclose",
+    "body": "game:BindToClose(function()\n\t${0}\nend)",
+    "description": "game:BindToClose()"
+  },
+  "-- game.Loaded": {
+    "prefix": "loaded",
+    "body": "if not game:IsLoaded() then\n\tgame.Loaded:Wait()\nend\n${0}",
+    "description": "Wait for game to load"
+  }
+}

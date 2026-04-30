@@ -1,0 +1,5 @@
+name = "Luau"
+grammar = "lua"
+path_suffixes = ["lua", "luau"]
+line_comments = ["-- "]
+block_comment = { start = "--[[", end = "]]" }
