@@ -3,6 +3,14 @@ name = "LuauX"
 version = "0.1.0"
 schema_version = 1
 authors = ["morikyt"]
-description = "LuauX — Roblox Luau snippets for Zed. game, workspace, Instance, services, RemoteEvents, TweenService, DataStore and more."
-repository = "https://github.com/MorikTV/LuauX"
+description = "LuauX — Full Luau language support for Zed with Roblox snippets."
+repository = "https://github.com/yourusername/LuauX"
 license = "MIT"
+
+[grammars.luau]
+repository = "https://github.com/4teapo/tree-sitter-luau"
+rev = "1511c1dd8a18cbc8b91f3d07ed5c8cf6e034e0f9"
+
+[language_servers.luau-lsp]
+name = "luau-lsp"
+languages = ["Luau"]
